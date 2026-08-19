@@ -1,9 +1,3 @@
-# This program checks whether a number is an Armstrong number, and can
-# also print all Armstrong numbers in a range given by the user.
-# An Armstrong number equals the sum of its own digits each raised to
-# the power of the number of digits (e.g. 153 = 1^3 + 5^3 + 3^3).
-
-
 def is_armstrong(num):
     digits = str(num)
     power = len(digits)
