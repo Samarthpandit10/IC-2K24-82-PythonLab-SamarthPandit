@@ -1,0 +1,88 @@
+## Part B – Predict the Output
+
+**Q1.**
+```python
+d = {'a': 1, 'b': 2}
+d2 = d
+d2['c'] = 3
+print(len(d))
+```
+**Output:**
+```text
+3
+```
+
+**Q2.**
+```python
+import copy
+d = {'x': [1]}
+d2 = copy.copy(d)
+d2['x'].append(2)
+print(d)
+```
+**Output:**
+```text
+{'x': [1, 2]}
+```
+
+**Q3.**
+```python
+d = {k: v for k, v in zip("abc", range(3)) if v}
+print(d)
+```
+**Output:**
+```text
+{'b': 1, 'c': 2}
+```
+
+**Q4.**
+```python
+d = {'a': 1}
+x = d.setdefault('b', 5)
+print(x, d['b'], d)
+```
+**Output:**
+```text
+5 5 {'a': 1, 'b': 5}
+```
+
+**Q5.**
+```python
+d = {1: 'a', 1.0: 'b', True: 'c'}
+print(d, len(d))
+```
+**Output:**
+```text
+{1: 'c'} 1
+```
+
+**Q6.**
+```python
+d = {'a': 1, 'b': 2}
+for k in d:
+    del d[k]
+```
+**Output:**
+```text
+RuntimeError: dictionary changed size during iteration
+```
+
+**Q7.**
+```python
+d = {'a': 1, 'b': 2}
+print(d.pop('x', None), d.popitem())
+```
+**Output:**
+```text
+None ('b', 2)
+```
+
+**Q8.**
+```python
+d = {'a': 1, 'b': 1}
+print({v: k for k, v in d.items()})
+```
+**Output:**
+```text
+{1: 'b'}
+```
