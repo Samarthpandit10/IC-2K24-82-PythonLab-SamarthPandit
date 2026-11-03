@@ -1,0 +1,49 @@
+## Part C – Short Reasoning Questions
+
+**Q1. Differentiate between assignment, shallow copy, and deep copy.**
+
+Assignment creates another reference to the same dictionary. A shallow copy creates a new dictionary but shares nested objects. A deep copy creates a new dictionary and copies nested objects independently.
+
+**Q2. Which objects can be used as dictionary keys?**
+
+Immutable and hashable objects, such as strings and tuples containing hashable elements, can be used as dictionary keys. Lists and sets cannot be used as dictionary keys because they are unhashable.
+
+**Q3. Differentiate between `d[key]`, `d.get(key)`, and `d.get(key, default)`.**
+
+`d[key]` raises a `KeyError` if the key is missing. `d.get(key)` returns `None` if the key is missing. `d.get(key, default)` returns the specified default value if the key is missing.
+
+**Q4. Differentiate between assigning a dictionary value and using `update()`.**
+
+Assignment, such as `d['a'] = 10`, adds or changes one key-value pair. The `update()` method can add or change multiple key-value pairs at once.
+
+**Q5. Differentiate between creating a new dictionary and modifying an existing dictionary.**
+
+A dictionary comprehension creates a new dictionary. Direct assignment or methods such as `update()` modify the existing dictionary.
+
+**Q6. Why should we avoid deleting dictionary keys while iterating over it?**
+
+Deleting keys while iterating over a dictionary can raise a `RuntimeError` because the dictionary size changes during iteration. We can avoid this by iterating over `list(d)` or collecting the keys to delete first.
+
+**Q7. How can we invert a dictionary when multiple keys have the same value?**
+
+We can create a new dictionary where each original value becomes a key and its corresponding original keys are stored in a list.
+
+Example:
+```python
+d = {'Book1': 'Amit', 'Book2': 'Amit', 'Book3': 'Ravi'}
+result = {}
+
+for book, member in d.items():
+    result.setdefault(member, []).append(book)
+
+print(result)
+```
+
+Output:
+```text
+{'Amit': ['Book1', 'Book2'], 'Ravi': ['Book3']}
+```
+
+**Q8. Compare dictionary lookup and list search.**
+
+Dictionary lookup takes average **O(1)** time because it uses hashing. Searching for an element in an unsorted list takes **O(n)** time because elements may need to be checked one by one.
