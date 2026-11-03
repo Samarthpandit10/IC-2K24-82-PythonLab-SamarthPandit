@@ -1,4 +1,4 @@
-# Semester 5 — Python Dictionary Assignment
+#Python Dictionary Assignment
 
 This README contains the aims, logic, sample tests, Part B output predictions, and Part C reasoning answers.
 
